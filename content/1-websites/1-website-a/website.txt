@@ -39,3 +39,23 @@ Urlshort: saramarandi.com
 ----
 
 Madeby: 
+
+----
+
+Siteframework: threejs
+
+----
+
+Sitelanguage: english
+
+----
+
+Sitetypo: tagtypo1
+
+----
+
+Sitecolor: black
+
+----
+
+Sitetypography: typotag1

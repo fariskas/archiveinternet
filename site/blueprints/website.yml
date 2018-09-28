@@ -51,12 +51,39 @@ fields:
     width: 1
 
   sitebehavior:
-    label: Behavior
+    label: Behavior / Effects
     type:  tags
     lower: true
     index: all
     width: 1
 
+  siteframework:
+    label: Framework / Libraries
+    type:  tags
+    lower: true
+    index: all
+    width: 1/2
+
+  sitelanguage:
+    label: Language
+    type:  tags
+    lower: true
+    index: all
+    width: 1/2
+
+  sitetypography:
+    label: Typography
+    type:  tags
+    lower: true
+    index: all
+    width: 1/2
+
+  sitecolor:
+    label: Colors
+    type:  tags
+    lower: true
+    index: all
+    width: 1/2
 
 
   text:

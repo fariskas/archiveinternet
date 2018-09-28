@@ -4,8 +4,11 @@
     </div>
   </footer>
 
-  <?= js('assets/scripts/jquery-3.2.1.min.js') ?>
-  <?= js('assets/scripts/scripts.js') ?>
-  
+  <?= js(array(
+    'assets/scripts/jquery-3.2.1.min.js',
+    'assets/scripts/scripts.js',
+  )) ?>
+
+
 </body>
 </html>

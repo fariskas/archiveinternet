@@ -26,44 +26,109 @@
       <div class="filters_wrap padding_global">
      
         <ul class="filters_lv filters_lv1">
-          <li class="active" data-menu="0">Type</li>
-          <li data-menu="1">Style</li>
-          <li data-menu="2">Language</li>
-          <li data-menu="3">Behaviour</li>
-          <li data-menu="4">Effect</li>
-          <li data-menu="5">Typography</li>
-          <li data-menu="6">Color</li>
-          <li data-menu="7">Framework</li>
+          <li class="active" data-menu="type">Type</li>
+          <li data-menu="style">Style</li>
+          <li data-menu="language">Language</li>
+          <li data-menu="behavior">Behavior</li>
+          <li data-menu="typography">Typography</li>
+          <li data-menu="color">Color</li>
+          <li data-menu="framework">Framework</li>
         </ul>
 
 
         <?php
-        // fetch all sitetypes
+        // sitetypes
         $sitetypes = $page->children()->visible()->pluck('sitetype', ',', true);
         sort($sitetypes);
-        //
+        // sitestyles
         $sitestyles = $page->children()->visible()->pluck('sitestyle', ',', true);
         sort($sitestyles);
+        // sitebehaviors
+        $sitebehaviors = $page->children()->visible()->pluck('sitebehavior', ',', true);
+        sort($sitebehaviors);
+        // siteframeworks
+        $siteframeworks = $page->children()->visible()->pluck('siteframework', ',', true);
+        sort($siteframeworks);
+        // sitelanguages
+        $sitelanguages = $page->children()->visible()->pluck('sitelanguage', ',', true);
+        sort($sitelanguages);
+        // sitetypographys
+        $sitetypographys = $page->children()->visible()->pluck('sitetypography', ',', true);
+        sort($sitetypographys);
+        // sitecolors
+        $sitecolors = $page->children()->visible()->pluck('sitecolor', ',', true);
+        sort($sitecolors);
         ?>
 
+
         <div class="filters_lv filters_lv2">
-          <ul class="filter_sitetypes">
+          <ul class="filter_subfilters">
+
+            <!--sitetypes-->
             <?php foreach($sitetypes as $sitetype): ?>
-            <li>
-              <a href="<?= url('websites/' . url::paramsToString(['sitetype' => $sitetype])) ?>">
+            <li class="li_sitetypes">
+              <a href="<?= url('/' . url::paramsToString(['sitetype' => $sitetype])) ?>">
                 <?= html($sitetype) ?>
               </a>
             </li>
             <?php endforeach ?>
-          </ul>
-          <ul class="filter_sitetypes">
+
+            <!--sitestyles-->
             <?php foreach($sitestyles as $sitestyle): ?>
-            <li>
-              <a href="<?= url('websites/' . url::paramsToString(['sitestyle' => $sitestyle])) ?>">
+            <li class="li_sitestyles">
+              <a href="<?= url('/' . url::paramsToString(['sitestyle' => $sitestyle])) ?>">
                 <?= html($sitestyle) ?>
               </a>
             </li>
             <?php endforeach ?>
+
+            <!--sitebehaviors-->
+            <?php foreach($sitebehaviors as $sitebehavior): ?>
+            <li class="li_sitebehaviors">
+              <a href="<?= url('/' . url::paramsToString(['sitebehavior' => $sitebehavior])) ?>">
+                <?= html($sitebehavior) ?>
+              </a>
+            </li>
+            <?php endforeach ?>
+
+            <!--siteframeworks-->
+            <?php foreach($siteframeworks as $siteframework): ?>
+            <li class="li_siteframeworks">
+              <a href="<?= url('/' . url::paramsToString(['siteframework' => $siteframework])) ?>">
+                <?= html($siteframework) ?>
+              </a>
+            </li>
+            <?php endforeach ?>
+
+            <!--sitelanguages-->
+            <?php foreach($sitelanguages as $sitelanguage): ?>
+            <li class="li_sitelanguages">
+              <a href="<?= url('/' . url::paramsToString(['sitelanguage' => $sitelanguage])) ?>">
+                <?= html($sitelanguage) ?>
+              </a>
+            </li>
+            <?php endforeach ?>
+
+            <!--sitetypographys-->
+            <?php foreach($sitetypographys as $sitetypography): ?>
+            <li class="li_sitetypographys">
+              <a href="<?= url('/' . url::paramsToString(['sitetypography' => $sitetypography])) ?>">
+                <?= html($sitetypography) ?>
+              </a>
+            </li>
+            <?php endforeach ?>
+
+            <!--sitecolors-->
+            <?php foreach($sitecolors as $sitecolor): ?>
+            <li class="li_sitecolors">
+              <a href="<?= url('/' . url::paramsToString(['sitecolor' => $sitecolor])) ?>">
+                <?= html($sitecolor) ?>
+              </a>
+            </li>
+            <?php endforeach ?>
+
+
+
           </ul>
         </div>
 
