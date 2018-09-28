@@ -1,13 +1,13 @@
-Title: Kirby Starterkit
+Title: archiveinter.net
 
 ----
 
-Author: Bastian Allgeier GmbH
+Author: anonymous
 
 ----
 
-Description: This is Kirby's Starterkit.
+Description: webarchive
 
 ----
 
-Copyright: © 2009–(date: Year) (link: http://getkirby.com text: The Kirby Team)
+Copyright: © 2018 Anonymous

@@ -1,4 +1,4 @@
-Title: Website A
+Title: Sara Marandi
 
 ----
 
@@ -27,3 +27,15 @@ Sitestyle: clean,minimal
 ----
 
 Sitebehavior: webgl
+
+----
+
+Urlfull: http://www.saramarandi.com/
+
+----
+
+Urlshort: saramarandi.com
+
+----
+
+Madeby: 

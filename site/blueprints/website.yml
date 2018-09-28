@@ -11,6 +11,21 @@ fields:
     type:  text
     width: 1
 
+  urlfull:
+    label: Full URL
+    type:  text
+    width: 1/2
+
+  urlshort:
+    label: Short Url
+    type:  text
+    width: 1/2
+
+  madeby:
+    label: Made By
+    type:  text
+    width: 1/2
+
   year:
     label: Year
     type:  text

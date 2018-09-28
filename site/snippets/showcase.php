@@ -52,7 +52,7 @@ if(isset($limit)) $websites = $websites->limit($limit);
 
 ?>
 
-<ul class="showcase grid gutter-1">
+<ul class="showcase grid">
 
   <?php foreach($websites as $website): ?>
 
@@ -62,7 +62,8 @@ if(isset($limit)) $websites = $websites->limit($limit);
             <img src="<?= $thumb->url() ?>" alt="Thumbnail for <?= $website->title()->html() ?>" class="showcase-image" />
           <?php endif ?>
           <div class="showcase-caption">
-            <h3 class="showcase-title"><?= $website->title()->html() ?></h3>
+            <span class="showcase-title"><?= $website->title()->html() ?></span>
+            <span class="showcase-url"><?= $website->urlshort()->html() ?></span>
           </div>
         </a>
     </li>
