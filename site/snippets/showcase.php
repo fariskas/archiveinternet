@@ -1,7 +1,7 @@
 <?php
 
-$websites = page('websites')->children()->visible()->paginate(10);
-
+$websites = page('websites')->children()->visible()->paginate(3);
+$pagination = $websites->pagination();
 // if($sitetype = param('sitetype')) {
 //   $websites = $websites->filterBy('sitetype', $sitetype, ',');
 // }
@@ -146,16 +146,26 @@ if(isset($limit)) $websites = $websites->limit($limit);
 </ul>
 
 
-<?php if($websites->pagination()->hasPages()): ?>
-<nav class="pagination">
 
-  <?php if($websites->pagination()->hasNextPage()): ?>
-  <a class="next" href="<?= $websites->pagination()->nextPageURL() ?>">&lsaquo; older posts</a>
-  <?php endif ?>
 
-  <?php if($websites->pagination()->hasPrevPage()): ?>
-  <a class="prev" href="<?= $websites->pagination()->prevPageURL() ?>">newer posts &rsaquo;</a>
-  <?php endif ?>
+<nav>
+  <ul>
 
+    <?php if($pagination->hasPrevPage()): ?>
+    <li><a href="<?= $pagination->prevPageURL() ?>">&larr;</a></li>
+    <?php else: ?>
+    <li><span>&larr;</span></li>
+    <?php endif ?>
+
+    <?php foreach($pagination->range(10) as $r): ?>
+    <li><a<?php if($pagination->page() == $r) echo ' class="active"' ?> href="<?= $pagination->pageURL($r) ?>"><?= $r ?></a></li>
+    <?php endforeach ?>
+
+    <?php if($pagination->hasNextPage()): ?>
+    <li class="last"><a href="<?= $pagination->nextPageURL() ?>">&rarr;</a></li>
+    <?php else: ?>
+    <li class="last"><span>&rarr;</span></li>
+    <?php endif ?>
+
+  </ul>
 </nav>
-<?php endif ?>
