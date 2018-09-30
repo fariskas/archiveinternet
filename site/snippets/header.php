@@ -26,13 +26,13 @@
       <div class="filters_wrap padding_global">
      
         <ul class="filters_lv filters_lv1">
-          <li class="active" data-menu="type">Type</li>
-          <li data-menu="style">Style</li>
-          <li data-menu="language">Language</li>
-          <li data-menu="behavior">Behavior</li>
-          <li data-menu="typography">Typography</li>
-          <li data-menu="color">Color</li>
-          <li data-menu="framework">Framework</li>
+          <li class="lv1_type">Type</li>
+          <li class="lv1_style">Style</li>
+          <li class="lv1_language">Language</li>
+          <li class="lv1_behavior">Behavior</li>
+          <li class="lv1_typography">Typography</li>
+          <li class="lv1_color">Color</li>
+          <li class="lv1_framework">Framework</li>
         </ul>
 
 
