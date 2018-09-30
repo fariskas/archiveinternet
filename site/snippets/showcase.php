@@ -1,6 +1,6 @@
 <?php
 
-$websites = page('websites')->children()->visible();
+$websites = page('websites')->children()->visible()->paginate(10);
 
 // if($sitetype = param('sitetype')) {
 //   $websites = $websites->filterBy('sitetype', $sitetype, ',');
@@ -33,6 +33,79 @@ if(param('sitestyle')){
       return $inTags;
     });
 }
+
+if(param('sitelanguage')){
+    $sitelanguages = explode(",", param('sitelanguage'));
+    $websites = $websites->filter(function($website) use ($sitelanguages) {
+      $inTags = true;
+      foreach ($sitelanguages as $sitelanguage) {
+        $pTags = explode(",", $website->sitelanguage()); //get tags field from page
+        if(!in_array($sitelanguage,$pTags)){
+          $inTags = false;
+        }
+      }
+      return $inTags;
+    });
+}
+
+if(param('sitebehavior')){
+    $sitebehaviors = explode(",", param('sitebehavior'));
+    $websites = $websites->filter(function($website) use ($sitebehaviors) {
+      $inTags = true;
+      foreach ($sitebehaviors as $sitebehavior) {
+        $pTags = explode(",", $website->sitebehavior()); //get tags field from page
+        if(!in_array($sitebehavior,$pTags)){
+          $inTags = false;
+        }
+      }
+      return $inTags;
+    });
+}
+
+if(param('sitetypography')){
+    $sitetypographys = explode(",", param('sitetypography'));
+    $websites = $websites->filter(function($website) use ($sitetypographys) {
+      $inTags = true;
+      foreach ($sitetypographys as $sitetypography) {
+        $pTags = explode(",", $website->sitetypography()); //get tags field from page
+        if(!in_array($sitetypography,$pTags)){
+          $inTags = false;
+        }
+      }
+      return $inTags;
+    });
+}
+
+if(param('sitecolor')){
+    $sitecolors = explode(",", param('sitecolor'));
+    $websites = $websites->filter(function($website) use ($sitecolors) {
+      $inTags = true;
+      foreach ($sitecolors as $sitecolor) {
+        $pTags = explode(",", $website->sitecolor()); //get tags field from page
+        if(!in_array($sitecolor,$pTags)){
+          $inTags = false;
+        }
+      }
+      return $inTags;
+    });
+}
+
+if(param('siteframework')){
+    $siteframeworks = explode(",", param('siteframework'));
+    $websites = $websites->filter(function($website) use ($siteframeworks) {
+      $inTags = true;
+      foreach ($siteframeworks as $siteframework) {
+        $pTags = explode(",", $website->siteframework()); //get tags field from page
+        if(!in_array($siteframework,$pTags)){
+          $inTags = false;
+        }
+      }
+      return $inTags;
+    });
+}
+
+
+
 
 /*
 
@@ -71,3 +144,18 @@ if(isset($limit)) $websites = $websites->limit($limit);
   <?php endforeach ?>
 
 </ul>
+
+
+<?php if($websites->pagination()->hasPages()): ?>
+<nav class="pagination">
+
+  <?php if($websites->pagination()->hasNextPage()): ?>
+  <a class="next" href="<?= $websites->pagination()->nextPageURL() ?>">&lsaquo; older posts</a>
+  <?php endif ?>
+
+  <?php if($websites->pagination()->hasPrevPage()): ?>
+  <a class="prev" href="<?= $websites->pagination()->prevPageURL() ?>">newer posts &rsaquo;</a>
+  <?php endif ?>
+
+</nav>
+<?php endif ?>
