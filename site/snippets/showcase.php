@@ -1,6 +1,6 @@
 <?php
 
-$websites = page('websites')->children()->visible()->paginate(3);
+$websites = page('websites')->children()->visible()->paginate(6);
 $pagination = $websites->pagination();
 // if($sitetype = param('sitetype')) {
 //   $websites = $websites->filterBy('sitetype', $sitetype, ',');
