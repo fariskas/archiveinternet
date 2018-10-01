@@ -17,7 +17,10 @@
 
     <ul class="brand">
       <li class="menu_brand"> <a href="<?= url() ?>" rel="home"><?= $site->title()->html() ?></a></li>
-      <li class="menu_filter">Filters</li>
+      <li class="menu_filter">
+        <span class="menu_filter_txt">Filters</span>
+        <a href="<?= url() ?>" rel="home"><span class="added_filter">Test <div class="remove_filter">X</div></span></a>
+      </li>
     </ul>
 
     <div class="filter_menu">

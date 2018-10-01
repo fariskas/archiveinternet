@@ -1,7 +1,9 @@
 <?php
 
-$websites = page('websites')->children()->visible()->paginate(6);
-$pagination = $websites->pagination();
+$paginateCount = 4;
+$websites = page('websites')->children()->visible()->paginate($paginateCount);
+
+
 // if($sitetype = param('sitetype')) {
 //   $websites = $websites->filterBy('sitetype', $sitetype, ',');
 // }
@@ -17,7 +19,7 @@ if(param('sitetype')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('sitestyle')){
@@ -31,7 +33,7 @@ if(param('sitestyle')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('sitelanguage')){
@@ -45,7 +47,7 @@ if(param('sitelanguage')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('sitebehavior')){
@@ -59,7 +61,7 @@ if(param('sitebehavior')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('sitetypography')){
@@ -73,7 +75,7 @@ if(param('sitetypography')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('sitecolor')){
@@ -87,7 +89,7 @@ if(param('sitecolor')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
 if(param('siteframework')){
@@ -101,10 +103,10 @@ if(param('siteframework')){
         }
       }
       return $inTags;
-    });
+    })->paginate($paginateCount);
 }
 
-
+$pagination = $websites->pagination();
 
 
 /*
@@ -148,13 +150,13 @@ if(isset($limit)) $websites = $websites->limit($limit);
 
 
 
-<nav>
+<nav class="pagination">
   <ul>
 
     <?php if($pagination->hasPrevPage()): ?>
-    <li><a href="<?= $pagination->prevPageURL() ?>">&larr;</a></li>
+    <li><a href="<?= $pagination->prevPageURL() ?>">Prev</a></li>
     <?php else: ?>
-    <li><span>&larr;</span></li>
+    <!-- <li><span>&larr;</span></li> -->
     <?php endif ?>
 
     <?php foreach($pagination->range(10) as $r): ?>
@@ -162,9 +164,9 @@ if(isset($limit)) $websites = $websites->limit($limit);
     <?php endforeach ?>
 
     <?php if($pagination->hasNextPage()): ?>
-    <li class="last"><a href="<?= $pagination->nextPageURL() ?>">&rarr;</a></li>
+    <li class="last"><a href="<?= $pagination->nextPageURL() ?>">Next</a></li>
     <?php else: ?>
-    <li class="last"><span>&rarr;</span></li>
+    <!-- <li class="last"><span>&rarr;</span></li> -->
     <?php endif ?>
 
   </ul>

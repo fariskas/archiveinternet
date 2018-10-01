@@ -7,8 +7,8 @@ email: faris_kassim@hotmail.com
 language: en
 role: admin
 history:
-  - websites/website-a
-  - websites/website-b
-  - websites/website-e
-  - websites/website-d
   - websites/website-c
+  - websites/website-d
+  - websites/website-b
+  - websites/website-a
+  - websites/website-e

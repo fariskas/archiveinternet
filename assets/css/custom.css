@@ -138,6 +138,23 @@ img {
 	text-transform: capitalize;
 }
 
+.added_filter {
+	display: none;
+	border-radius: 50px;
+	/*border:1px solid rgba(0, 0, 0, 0.2);*/
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+	padding: 10px 15px;
+	color: var(--color-darkgray);
+	font-size: 17px;
+	margin-left: 15px;
+	display: none;
+}
+.added_filter.active {
+	display: inline-flex;
+}
+.added_filter .remove_filter {
+    margin-left: 5px;
+}
 
 /** SITE SHOWCASE **/
 
@@ -166,4 +183,20 @@ img {
 	color: var(--color-darkgray);
 }
 
-/*box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.02);*/
+
+
+/** PAGINATION **/
+
+.pagination ul {
+	display: flex;
+	justify-content: flex-end;
+	margin: 50px 0 150px;
+}
+.pagination li {
+	padding-left: 25px;
+	text-transform: lowercase;
+}
+.pagination li a.active {
+	color: var(--color-darkgray);
+}
+

@@ -23,3 +23,31 @@ Sitestyle: clean,brutalist
 ----
 
 Sitebehavior: 
+
+----
+
+Urlfull: 
+
+----
+
+Urlshort: 
+
+----
+
+Madeby: 
+
+----
+
+Siteframework: 
+
+----
+
+Sitelanguage: english
+
+----
+
+Sitetypography: 
+
+----
+
+Sitecolor: 
