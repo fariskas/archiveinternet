@@ -141,6 +141,7 @@ img {
 .added_filter {
 	display: none;
 	border-radius: 50px;
+	background-color: var(--color-bg);
 	/*border:1px solid rgba(0, 0, 0, 0.2);*/
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
 	padding: 10px 15px;

@@ -1,7 +1,7 @@
 <?php
 
-$paginateCount = 4;
-$websites = page('websites')->children()->visible()->paginate($paginateCount);
+$paginateCount = 3;
+$websites = page('websites')->children()->visible();
 
 
 // if($sitetype = param('sitetype')) {
@@ -21,8 +21,7 @@ if(param('sitetype')){
       return $inTags;
     })->paginate($paginateCount);
 }
-
-if(param('sitestyle')){
+else if(param('sitestyle')){
     $sitestyles = explode(",", param('sitestyle'));
     $websites = $websites->filter(function($website) use ($sitestyles) {
       $inTags = true;
@@ -36,7 +35,7 @@ if(param('sitestyle')){
     })->paginate($paginateCount);
 }
 
-if(param('sitelanguage')){
+else if(param('sitelanguage')){
     $sitelanguages = explode(",", param('sitelanguage'));
     $websites = $websites->filter(function($website) use ($sitelanguages) {
       $inTags = true;
@@ -50,7 +49,7 @@ if(param('sitelanguage')){
     })->paginate($paginateCount);
 }
 
-if(param('sitebehavior')){
+else if(param('sitebehavior')){
     $sitebehaviors = explode(",", param('sitebehavior'));
     $websites = $websites->filter(function($website) use ($sitebehaviors) {
       $inTags = true;
@@ -64,7 +63,7 @@ if(param('sitebehavior')){
     })->paginate($paginateCount);
 }
 
-if(param('sitetypography')){
+else if(param('sitetypography')){
     $sitetypographys = explode(",", param('sitetypography'));
     $websites = $websites->filter(function($website) use ($sitetypographys) {
       $inTags = true;
@@ -78,7 +77,7 @@ if(param('sitetypography')){
     })->paginate($paginateCount);
 }
 
-if(param('sitecolor')){
+else if(param('sitecolor')){
     $sitecolors = explode(",", param('sitecolor'));
     $websites = $websites->filter(function($website) use ($sitecolors) {
       $inTags = true;
@@ -92,7 +91,7 @@ if(param('sitecolor')){
     })->paginate($paginateCount);
 }
 
-if(param('siteframework')){
+else if(param('siteframework')){
     $siteframeworks = explode(",", param('siteframework'));
     $websites = $websites->filter(function($website) use ($siteframeworks) {
       $inTags = true;
@@ -104,9 +103,16 @@ if(param('siteframework')){
       }
       return $inTags;
     })->paginate($paginateCount);
+    
+} else {
+
+    $websites = $websites->paginate($paginateCount);
+
 }
 
 $pagination = $websites->pagination();
+
+
 
 
 /*
@@ -146,6 +152,7 @@ if(isset($limit)) $websites = $websites->limit($limit);
   <?php endforeach ?>
 
 </ul>
+
 
 
 
