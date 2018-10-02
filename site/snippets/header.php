@@ -41,25 +41,25 @@
 
         <?php
         // sitetypes
-        $sitetypes = $page->children()->visible()->pluck('sitetype', ',', true);
+        $sitetypes = page('websites')->children()->visible()->pluck('sitetype', ',', true);
         sort($sitetypes);
         // sitestyles
-        $sitestyles = $page->children()->visible()->pluck('sitestyle', ',', true);
+        $sitestyles = page('websites')->children()->visible()->pluck('sitestyle', ',', true);
         sort($sitestyles);
         // sitebehaviors
-        $sitebehaviors = $page->children()->visible()->pluck('sitebehavior', ',', true);
+        $sitebehaviors = page('websites')->children()->visible()->pluck('sitebehavior', ',', true);
         sort($sitebehaviors);
         // siteframeworks
-        $siteframeworks = $page->children()->visible()->pluck('siteframework', ',', true);
+        $siteframeworks = page('websites')->children()->visible()->pluck('siteframework', ',', true);
         sort($siteframeworks);
         // sitelanguages
-        $sitelanguages = $page->children()->visible()->pluck('sitelanguage', ',', true);
+        $sitelanguages = page('websites')->children()->visible()->pluck('sitelanguage', ',', true);
         sort($sitelanguages);
         // sitetypographys
-        $sitetypographys = $page->children()->visible()->pluck('sitetypography', ',', true);
+        $sitetypographys = page('websites')->children()->visible()->pluck('sitetypography', ',', true);
         sort($sitetypographys);
         // sitecolors
-        $sitecolors = $page->children()->visible()->pluck('sitecolor', ',', true);
+        $sitecolors = page('websites')->children()->visible()->pluck('sitecolor', ',', true);
         sort($sitecolors);
         ?>
 

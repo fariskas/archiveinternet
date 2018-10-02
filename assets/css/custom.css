@@ -184,7 +184,27 @@ img {
 	color: var(--color-darkgray);
 }
 
+/** SINGLE SITE DETAIL PAGE **/
 
+.main_detailed {
+	display: flex;
+}
+.main_detailed h1 {
+	font-size: 24px;
+	font-weight: 200;
+}
+.meta_text label {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: var(--color-darkgray);
+}
+.meta_text span {
+	font-size: 15px;
+	text-transform: capitalize;
+}
+.meta_text.meta_urlfull span {
+	text-transform: lowercase;
+}
 
 /** PAGINATION **/
 
@@ -200,4 +220,5 @@ img {
 .pagination li a.active {
 	color: var(--color-darkgray);
 }
+
 
