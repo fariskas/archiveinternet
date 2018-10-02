@@ -38,7 +38,7 @@ Urlshort: saramarandi.com
 
 ----
 
-Madeby: 
+Madeby: Lorem Ipsum
 
 ----
 
