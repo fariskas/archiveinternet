@@ -189,21 +189,46 @@ img {
 .main_detailed {
 	display: flex;
 }
+.main_detailed .meta_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 35%;
+}
+.main_detailed .img_wrap {
+
+}
 .main_detailed h1 {
 	font-size: 24px;
 	font-weight: 200;
+	width: 100%;
+	margin-bottom: 4px;
+}
+.meta_text {
+	margin-bottom: 40px;
+	max-width: 50%;
+	flex-basis: 50%;
 }
 .meta_text label {
 	font-size: 10px;
+	font-weight: 300;
 	text-transform: uppercase;
 	color: var(--color-darkgray);
+	display: block;
+	clear: both;
+	padding-bottom: 5px;
 }
 .meta_text span {
 	font-size: 15px;
 	text-transform: capitalize;
 }
+.meta_urlfull {
+	min-width: 100%;
+	flex-basis: 100%;
+}
 .meta_text.meta_urlfull span {
 	text-transform: lowercase;
+	font-size: 16px;
+	color: var(--color-darkgray);
 }
 
 /** PAGINATION **/
