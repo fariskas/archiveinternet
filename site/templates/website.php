@@ -172,7 +172,9 @@
       // above the files list in the sidebar.
       foreach($page->images()->sortBy('sort', 'asc') as $image): ?>
         <figure>
-          <img src="<?= $image->url() ?>" alt="<?= $page->title()->html() ?>" />
+          <a target="_blank" href="<?= $page->urlfull() ?>">
+            <img src="<?= $image->url() ?>" alt="<?= $page->title()->html() ?>" />
+          </a>
         </figure>
       <?php endforeach ?>
       
