@@ -190,12 +190,20 @@ img {
 	display: flex;
 }
 .main_detailed .meta_wrap {
+	max-width: 35%;
+	width: 35%;
+	flex-basis: 35%;
+	padding-right: 20px;
+}
+.main_detailed .image_wrap  {
+	padding-left: 20px;
+}
+.main_detailed .image_wrap figure {
+	margin:0;
+}
+.main_detailed .meta_text_wrap {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 35%;
-}
-.main_detailed .img_wrap {
-
 }
 .main_detailed h1 {
 	font-size: 24px;
@@ -208,6 +216,12 @@ img {
 	max-width: 50%;
 	flex-basis: 50%;
 }
+.meta_text_wrap .meta_text:nth-child(2n + 1) {
+	padding-right: 10px;
+}
+.meta_text_wrap .meta_text:nth-child(2n) {
+	padding-left: 10px;
+}
 .meta_text label {
 	font-size: 10px;
 	font-weight: 300;
@@ -215,20 +229,29 @@ img {
 	color: var(--color-darkgray);
 	display: block;
 	clear: both;
-	padding-bottom: 5px;
+	padding-bottom: 8px;
 }
 .meta_text span {
 	font-size: 15px;
 	text-transform: capitalize;
+	display: block;
+}
+.meta_text li {
+	margin-bottom: 10px;
 }
 .meta_urlfull {
 	min-width: 100%;
 	flex-basis: 100%;
+	margin-bottom: 55px;
 }
-.meta_text.meta_urlfull span {
+.meta_text.meta_urlfull span a{
 	text-transform: lowercase;
 	font-size: 16px;
 	color: var(--color-darkgray);
+	word-break: break-all;
+}
+.meta_urlfull img {
+	margin-left: 5px;
 }
 
 /** PAGINATION **/
